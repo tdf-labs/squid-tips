@@ -10,6 +10,8 @@ ADD package-lock.json .
 RUN npm ci
 ADD tsconfig.json .
 ADD src src
+RUN make codegen
+RUN make typegen
 RUN npm run build
 
 FROM node-with-gyp AS deps
