@@ -32,6 +32,7 @@ up:
 down:
 	@docker-compose down
 
-deploy: echo @API_DEBUG=true npx sqd squid update tips-$(network)@$(version) --source github.com/tdf-labs/squid-tips.git#main -v -e NETWORK=$(network)
+deploy:
+    @API_DEBUG=true npx sqd squid update tips-$(network)@$(version) --source github.com/tdf-labs/squid-tips.git#main -v -e NETWORK=$(network)
 
 .PHONY: build serve process migrate codegen typegen up down

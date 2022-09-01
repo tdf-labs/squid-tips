@@ -23,6 +23,7 @@ RUN npm ci --production
 FROM node AS squid
 WORKDIR /squid
 COPY --from=deps /squid/package.json .
+COPY --from=deps /squid/Makefile .
 COPY --from=deps /squid/package-lock.json .
 COPY --from=deps /squid/node_modules node_modules
 COPY --from=builder /squid/lib lib
