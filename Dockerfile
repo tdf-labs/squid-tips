@@ -10,7 +10,12 @@ ADD package-lock.json .
 RUN npm ci
 ADD tsconfig.json .
 ADD src src
+ADD schema.graphql .
+ADD Makefile .
 RUN make codegen
+ADD typegenKhala.json .
+ADD typegenKusama.json .
+ADD typegenPolkadot.json .
 RUN make typegen
 RUN npm run build
 
@@ -23,7 +28,6 @@ RUN npm ci --production
 FROM node AS squid
 WORKDIR /squid
 COPY --from=deps /squid/package.json .
-COPY --from=deps /squid/Makefile .
 COPY --from=deps /squid/package-lock.json .
 COPY --from=deps /squid/node_modules node_modules
 COPY --from=builder /squid/lib lib
