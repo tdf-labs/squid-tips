@@ -18,11 +18,11 @@ codegen:
 	@npx --yes @subsquid/typeorm-codegen
 
 typegen-khala:
-	@npx --yes @subsquid/substrate-typegen typegenKhala.json
+	@npx --yes @subsquid/substrate-typegen typegen/typegen-khala.json
 typegen-kusama:
-	@npx --yes @subsquid/substrate-typegen typegenKusama.json
+	@npx --yes @subsquid/substrate-typegen typegen/typegen-kusama.json
 typegen-polkadot:
-	@npx --yes @subsquid/substrate-typegen typegenPolkadot.json
+	@npx --yes @subsquid/substrate-typegen typegen/typegen-polkadot.json
 
 typegen: typegen-khala typegen-kusama typegen-polkadot
 

@@ -10,7 +10,7 @@ export function getTipsNewTipEvent(
   network: SubstrateNetwork
 ): { tipHash: Uint8Array } {
   switch (network) {
-    case SubstrateNetwork.phala: {
+    case SubstrateNetwork.khala: {
       const event = new KhalaTipsNewTipEvent(ctx);
 
       if (event.isV1060) {

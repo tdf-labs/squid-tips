@@ -3,6 +3,7 @@ import '@polkadot/api-augment';
 import { SubstrateNetwork } from '../model';
 
 type Api = {
+  [SubstrateNetwork.khala]: ApiPromise;
   [SubstrateNetwork.phala]: ApiPromise;
   [SubstrateNetwork.polkadot]: ApiPromise;
   [SubstrateNetwork.kusama]: ApiPromise;
@@ -11,7 +12,8 @@ type Api = {
 let api = {} as Api;
 
 const providers = {
-  [SubstrateNetwork.phala]: 'wss://khala.api.onfinality.io/public-ws',
+  [SubstrateNetwork.khala]: 'wss://khala.api.onfinality.io/public-ws',
+  [SubstrateNetwork.phala]: 'wss://phala.api.onfinality.io/public-ws',
   [SubstrateNetwork.polkadot]: 'wss://polkadot.api.onfinality.io/public-ws',
   [SubstrateNetwork.kusama]: 'wss://kusama.api.onfinality.io/public-ws',
 };

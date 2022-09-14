@@ -10,7 +10,7 @@ export function getTipsTipCall(
   network: SubstrateNetwork
 ): { hash: Uint8Array; tipValue: bigint } {
   switch (network) {
-    case SubstrateNetwork.phala: {
+    case SubstrateNetwork.khala: {
       const call = new KhalaTipsTipCall(ctx);
 
       if (call.isV1060) {
